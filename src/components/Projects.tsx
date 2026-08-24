@@ -66,7 +66,7 @@ const Projects = () => {
     }
   ];
   
-  // New 10 image URLs
+  // New 13 image URLs (10 previous + 3 new)
   const newImageUrls = [
     "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/b19b737144fc1d0f4eef6cc76b1abdbe55abb437889c1a57e97af4b0cf038cf0.jpeg",
     "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/550c79cd9fae3eba1d30fc87b5774187d3fb34f39b87435fd42726d3405638fb.jpeg",
@@ -77,13 +77,17 @@ const Projects = () => {
     "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/0cbc776c235bb9495a5e1b53c7c99b1e2b1f23e8efc6cfbf7e2350b063d16b6e.jpeg",
     "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/113b6ceb276f5980467392645fe50bf103a4f3c6c70e12edc83bfb582ebfda12.jpeg",
     "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/abe8b1b1008792385739825510fde7737cfce899c06654497bde2f38848c5535.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/8347414b0da098534d21957da6a4d995b552043bd1c588f6f781a874d73a07f8.jpeg"
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/8347414b0da098534d21957da6a4d995b552043bd1c588f6f781a874d73a07f8.jpeg",
+    // The 3 new images
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/552654373cecb8a65b5e9a712eaa601a9741669809ac080c18fdd3e55066051f.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ea2501312eb5a9fcc7ad11c497293f5e67698655588feca5a8296d3ed8e07b8d.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/5b344f10c03b810c453c88264a76a02ccf0311de3c99c2a84ee3342c9031b67f.jpeg"
   ];
   
   // Categories for new projects (round-robin assignment)
   const categories = ["زجاج", "شاور", "واجهات", "أبواب", "درابزين", "مرايات", "ألومنيum"];
   
-  // Generate 10 new projects with placeholder titles
+  // Generate 13 new projects with placeholder titles
   const newProjects = newImageUrls.map((imageUrl, index) => {
     const categoryIndex = index % categories.length;
     const category = categories[categoryIndex];
