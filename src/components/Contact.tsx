@@ -5,7 +5,7 @@ const Contact = () => {
   const formattedWhatsAppNumber = WHATSAPP_NUMBER.replace(/\s/g, '').replace('+', '');
   
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="contact">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-4 md:text-3xl">
           مشروع زجاج؟ ننفذه لك في جدة ومكة

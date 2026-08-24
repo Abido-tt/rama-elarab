@@ -43,7 +43,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
@@ -79,7 +79,20 @@ const Services = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 py-3 text-gray-600 hover:text-gray-900 border">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="w-full sm:w-auto px-8 py-3 text-gray-600 hover:text-gray-900 border"
+            onClick={() => {
+              const element = document.getElementById("projects");
+              if (element) {
+                window.scrollTo({
+                  top: element.offsetTop - 80,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             استعرض جميع المنتجات
           </Button>
         </div>

@@ -8,69 +8,82 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("الكل");
   const [currentIndex, setCurrentIndex] = useState(0);
   
+  // Project image sources
+  const projectImages = [
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/0da7a60d66a7dbc86cc3524b63bed335ce2452181a3422cdef85e6419064f4bf.jpg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/de03fed34d2bda4ef186fffa0d88852576cb67e89b253756b179415f2c349f05.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ba2a40a450a3b694de79a4da95a88249e124063d3052392569320eff6c17fffd.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/fbdf7a96d335b2b23501d5a437dde6ba229a5d1cfbc3db33a0f1ba8730766718.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/c3ce1771665a6721e10132acc060b17f645a2a49234da7b874cb2c1425c2e822.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/87faf49ca38272bfee567c6537ae486e8c1e94067e2be2006598e5c385f4f043.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ea9dd3abb67db95386cdeff4c68241ea9563d827529374d110db99d36603b380.jpeg",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/6c436ab2f8b0991733a7b023f23dadb159230cfa1af20ca5a79db07088e493ef.png",
+    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ebb9b62aa5ccf5755b49bced0bd40825d04a479c95b6060954409fd5c2bf513b.png"
+  ];
+  
   // Project data with categories matching the filter list
   const projects = [
     {
       id: 1,
       title: "فيلا سكنية فاخرة",
       category: "زجاج",
-      image: "/placeholder.svg",
+      image: projectImages[0],
       alt: "فيلا سكنية فاخرة - زجاج"
     },
     {
       id: 2,
       title: "حمام فاخر",
       category: "شاور",
-      image: "/placeholder.svg",
+      image: projectImages[1],
       alt: "حمام فاخر - شاور"
     },
     {
       id: 3,
       title: "واجهة برج تجاري",
       category: "واجهات",
-      image: "/placeholder.svg",
+      image: projectImages[2],
       alt: "واجهة برج تجاري - واجهات"
     },
     {
       id: 4,
       title: "باب فندق أوتوماتيك",
       category: "أبواب",
-      image: "/placeholder.svg",
+      image: projectImages[3],
       alt: "باب فندق أوتوماتيك - أبواب"
     },
     {
       id: 5,
       title: "درابزين شرفة",
       category: "درابزين",
-      image: "/placeholder.svg",
+      image: projectImages[4],
       alt: "درابزين شرفة - درابزين"
     },
     {
       id: 6,
       title: "مراية مدخل فندقي",
       category: "مرايات",
-      image: "/placeholder.svg",
+      image: projectImages[5],
       alt: "مراية مدخل فندقي - مرايات"
     },
     {
       id: 7,
       title: "نوافذ مبنى سكني",
       category: "ألومنيوم",
-      image: "/placeholder.svg",
+      image: projectImages[6],
       alt: "نوافذ مبنى سكني - ألومنيوم"
     },
     {
       id: 8,
       title: "محل تجاري زجاجي",
       category: "زجاج",
-      image: "/placeholder.svg",
+      image: projectImages[7],
       alt: "محل تجاري زجاجي - زجاج"
     },
     {
       id: 9,
       title: "شرفة زجاجية",
       category: "شاور",
-      image: "/placeholder.svg",
+      image: projectImages[8],
       alt: "شرفة زجاجية - شاور"
     }
   ];
@@ -112,7 +125,7 @@ const Projects = () => {
   };
   
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="projects">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 text-center md:text-3xl">
@@ -166,7 +179,17 @@ const Projects = () => {
         
         {/* Load more button - in a real app, this would load more projects */}
         <div className="mt-8 text-center">
-          <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 py-3 text-gray-600 hover:text-gray-900 border">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="w-full sm:w-auto px-8 py-3 text-gray-600 hover:text-gray-900 border"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
             تحميل المزيد
           </Button>
         </div>

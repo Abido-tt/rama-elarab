@@ -2,7 +2,7 @@ import { INSTAGRAM_URL, TIKTOK_URL } from "./constants";
 
 const SocialMedia = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="social">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 md:text-3xl">
           تواصل معنا عبر وسائل التواصل
@@ -30,7 +30,7 @@ const SocialMedia = () => {
               <span className="text-blue-600">🎵</span>
             </div>
             <span className="font-medium text-gray-900 text-sm sm:text/base">تيك توك</span>
-            <span className="mt-1 text-xs sm:text-sm text-gray-500">@rama.alarab.glass</span>
+            <span className="mt-1 text-xs sm:text-sm text-gray-500">@rama.alarab.glassjeeda</span>
           </a>
         </div>
       </div>

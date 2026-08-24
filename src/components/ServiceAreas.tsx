@@ -1,6 +1,6 @@
 const ServiceAreas = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="areas">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-gray-900 text-center mb-8 md:text-3xl">
           مناطق الخدمة
