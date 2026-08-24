@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu } from "@/components/ui/menu";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu as MenuIcon, X as XIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,22 +25,22 @@ const Header = () => {
           <div className="hidden md:flex md:items-center md:space-x-8">
             {/* Navigation links */}
             <nav className="space-x-8">
-              <Link href="#home" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link to="#" className="text-gray-700 hover:text-gray-900 transition-colors">
                 الرئيسية
               </Link>
-              <Link href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link to="#services" className="text-gray-700 hover:text-gray-900 transition-colors">
                 الخدمات
               </Link>
-              <Link href="#projects" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link to="#projects" className="text-gray-700 hover:text-gray-900 transition-colors">
                 أعمالنا
               </Link>
-              <Link href="#about" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link to="#about" className="text-gray-700 hover:text-gray-900 transition-colors">
                 من نحن
               </Link>
-              <Link href="#areas" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link to="#areas" className="text-gray-700 hover:text-gray-900 transition-colors">
                 مناطق الخدمة
               </Link>
-              <Link href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link to="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">
                 تواصل معنا
               </Link>
             </nav>
