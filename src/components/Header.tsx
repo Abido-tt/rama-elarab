@@ -13,7 +13,7 @@ const Header = () => {
   const MenuItem = MenuPrimitive.Item;
 
   return (
-    <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100">
+    <header className="bg-white/80 backdrop-sm sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -55,32 +55,32 @@ const Header = () => {
               size="icon" 
               aria-label="فتح القائمة"
               onClick={() => setIsMenuOpen(true)}
-              className="p-1"
+              className="p-2"
             >
-              {isMenuOpen ? <XIcon className="h-4 w-4" /> : <MenuIcon className="h-4 w-4" />}
+              {isMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
             </Button>
           </div>
         </div>
       </div>
       
       <Menu open={isMenuOpen} onOpenChange={setIsMenuOpen} className="z-50 mt-2">
-        <MenuContent className="w-56 bg-white border border-gray-100 rounded-md shadow-lg p-2">
-          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+        <MenuContent className="w-full sm:w-56 bg-white border border-gray-100 rounded-md shadow-lg p-2">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
             الرئيسية
           </MenuItem>
-          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
             الخدمات
           </MenuItem>
-          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
             أعمالنا
           </MenuItem>
-          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
             من نحن
           </MenuItem>
-          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
             مناطق الخدمة
           </MenuItem>
-          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
             تواصل معنا
           </MenuItem>
         </MenuContent>
