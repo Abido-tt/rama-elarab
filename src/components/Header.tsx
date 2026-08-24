@@ -1,0 +1,123 @@
+import { useState } from "react";
+import { Menu } from "@/components/ui/menu";
+import { Button } from "@/components/ui/button";
+import { Moon, Sun, Menu as MenuIcon, X as XIcon } from "lucide-react";
+import Link from "next/link";
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll event for sticky header
+  // Note: In a real app, we would use useEffect, but for simplicity we'll use inline handler
+  // In a real implementation, we would add this in useEffect
+  // For now, we'll rely on Tailwind's sticky and handle scroll in a separate effect if needed
+
+  return (
+    <header className="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-center justify-between h-16">
+          <div className="flex-shrink-0 flex items-center">
+            {/* Logo placeholder */}
+            <span className="text-xl font-bold text-gray-900">راما العرب للزجاج</span>
+          </div>
+          
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {/* Navigation links */}
+            <nav className="space-x-8">
+              <Link href="#home" className="text-gray-700 hover:text-gray-900 transition-colors">
+                الرئيسية
+              </Link>
+              <Link href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">
+                الخدمات
+              </Link>
+              <Link href="#projects" className="text-gray-700 hover:text-gray-900 transition-colors">
+                أعمالنا
+              </Link>
+              <Link href="#about" className="text-gray-700 hover:text-gray-900 transition-colors">
+                من نحن
+              </Link>
+              <Link href="#areas" className="text-gray-700 hover:text-gray-900 transition-colors">
+                مناطق الخدمة
+              </Link>
+              <Link href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">
+                تواصل معنا
+              </Link>
+            </nav>
+            
+            {/* CTA Button */}
+            <Button variant="default" size="sm" className="px-6 py-2 text-sm">
+              تواصل معنا
+            </Button>
+          </div>
+          
+          {/* Mobile menu button */}
+          <div className="-mr-2 flex items-center md:hidden">
+            <Button 
+              variant="outline" 
+              size="icon" 
+              aria-label="فتح القائمة"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              {isMenuOpen ? <XIcon className="h-4 w-4" /> : <MenuIcon className="h-4 w-4" />}
+            </Button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile menu */}
+      <Menu 
+        open={isMenuOpen} 
+        onOpenChange={setIsMenuOpen} 
+        className="z-50"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Button 
+            variant="outline" 
+            className="w-full text-left"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            الرئيسية
+          </Button>
+          <Button 
+            variant="outline" 
+            className="w-full text-left"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            الخدمات
+          </Button>
+          <Button 
+            variant="outline" 
+            className="w-full text-left"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            أعمالنا
+          </Button>
+          <Button 
+            variant="outline" 
+            className="w-full text-left"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            من نحن
+          </Button>
+          <Button 
+            variant="outline" 
+            className="w-full text-left"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            مناطق الخدمة
+          </Button>
+          <Button 
+            variant="outline" 
+            className="w-full text-left"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            تواصل معنا
+          </Button>
+        </div>
+      </Menu>
+    </header>
+  );
+};
+
+export default Header;

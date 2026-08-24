@@ -1,0 +1,44 @@
+const Footer = () => {
+  // Placeholder for WhatsApp number - will be replaced later
+  const WHATSAPP_NUMBER = "+966XXXXXXXX"; // Placeholder - to be replaced in one place
+  
+  return (
+    <footer className="border-t border-gray-200 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col items-center text-center sm:flex-row sm:justify-between">
+          <div className="mb-4 sm:mb-0">
+            <span className="text-gray-900 font-medium">راما العرب للزجاج</span>
+          </div>
+          <div className="flex flex-col items-center sm:flex-row sm:space-x-6">
+            <div className="mb-2 sm:mb-0">
+              <span className="text-gray-600">مكة المكرمة &middot; المدينة المنورة</span>
+            </div>
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.instagram.com/rama_alarab_glass" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                إنستغرام
+              </a>
+              <a 
+                href="https://www.tiktok.com/@rama.alarab.glass" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                تيك توك
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 pt-4 border-t border-gray-200 text-sm text-gray-500">
+          © 2024-2026 راما العرب للزجاج. جميع الحقوق محفوظة.
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
