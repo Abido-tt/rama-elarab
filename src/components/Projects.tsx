@@ -15,63 +15,63 @@ const Projects = () => {
       title: "فيلا سكنية فاخرة",
       category: "زجاج",
       image: "/placeholder.svg",
-      alt: "فيلا سكنية بواجهات زجاج سيكوريت شفاف"
+      alt: "فيلا سكنية فاخرة - زجاج"
     },
     {
       id: 2,
       title: "حمام فاخر",
       category: "شاور",
       image: "/placeholder.svg",
-      alt: "حمام بحاجز زجاج frameless وسمك 10مم"
+      alt: "حمام فاخر - شاور"
     },
     {
       id: 3,
       title: "واجهة برج تجاري",
       category: "واجهات",
       image: "/placeholder.svg",
-      alt: "واجهة برج تجاري بزجاج عازل حراري مزدوج"
+      alt: "واجهة برج تجاري - واجهات"
     },
     {
       id: 4,
       title: "باب فندق أوتوماتيك",
       category: "أبواب",
       image: "/placeholder.svg",
-      alt: "باب فندق زجاج أوتوماتيك مع حساس حركة"
+      alt: "باب فندق أوتوماتيك - أبواب"
     },
     {
       id: 5,
       title: "درابزين شرفة",
       category: "درابزين",
       image: "/placeholder.svg",
-      alt: "درابزين زجاجي لشرفة سكنية مع قاعدة ستانلس ستيل"
+      alt: "درابزين شرفة - درابزين"
     },
     {
       id: 6,
       title: "مراية مدخل فندقي",
       category: "مرايات",
       image: "/placeholder.svg",
-      alt: "مراية مدخل فندقي بإضاءة خلفية LED"
+      alt: "مراية مدخل فندقي - مرايات"
     },
     {
       id: 7,
       title: "نوافذ مبنى سكني",
       category: "ألومنيوم",
       image: "/placeholder.svg",
-      alt: "نوافذ مبنى سكني بزجاج عازل للصوت والحرارة وإطارات ألومنيوم"
+      alt: "نوافذ مبنى سكني - ألومنيوم"
     },
     {
       id: 8,
       title: "محل تجاري زجاجي",
       category: "زجاج",
       image: "/placeholder.svg",
-      alt: "محل تجاري بواجهة زجاج سيكوريت واضح"
+      alt: "محل تجاري زجاجي - زجاج"
     },
     {
       id: 9,
       title: "شرفة زجاجية",
       category: "شاور",
       image: "/placeholder.svg",
-      alt: "شرفة زجاجية بإطلالة بانورامية"
+      alt: "شرفة زجاجية - شاور"
     }
   ];
   
