@@ -66,55 +66,27 @@ const Header = () => {
       </div>
       
       {/* Mobile menu */}
-      <Menu 
-        open={isMenuOpen} 
-        onOpenChange={setIsMenuOpen} 
-        className="z-50"
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Button 
-            variant="outline" 
-            className="w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+      <Menu open={isMenuOpen} onOpenChange={setIsMenuOpen} className="z-50">
+        <MenuContent className="w-56">
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="text-left">
             الرئيسية
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          </MenuItem>
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="text-left">
             الخدمات
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          </MenuItem>
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="text-left">
             أعمالنا
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          </MenuItem>
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="text-left">
             من نحن
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          </MenuItem>
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="text-left">
             مناطق الخدمة
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full text-left"
-            onClick={() => setIsMenuOpen(false)}
-          >
+          </MenuItem>
+          <MenuItem onClick={() => setIsMenuOpen(false)} className="text-left">
             تواصل معنا
-          </Button>
-        </div>
+          </MenuItem>
+        </MenuContent>
       </Menu>
     </header>
   );
