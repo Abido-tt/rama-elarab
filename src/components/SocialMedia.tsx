@@ -12,7 +12,7 @@ const SocialMedia = () => {
             href={INSTAGRAM_URL} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex flex-col items-center bg-white rounded-xl p-6 shadow hover:shadow-lg transition-shadow w-48"
+            className="flex flex-col items-center bg-white rounded-lg p-6 border border-gray-100 hover:border-gray-200 transition-all w-48"
           >
             <div className="w-12 h-12 mb-3 bg-orange-500/10 rounded-full flex items-center justify-center">
               <span className="text-orange-600">📷</span>
@@ -24,7 +24,7 @@ const SocialMedia = () => {
             href={TIKTOK_URL} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex flex-col items-center bg-white rounded-xl p-6 shadow hover:shadow-lg transition-shadow w-48"
+            className="flex flex-col items-center bg-white rounded-lg p-6 border border-gray-100 hover:border-gray-200 transition-all w-48"
           >
             <div className="w-12 h-12 mb-3 bg-blue-500/10 rounded-full flex items-center justify-center">
               <span className="text-blue-600">🎵</span>

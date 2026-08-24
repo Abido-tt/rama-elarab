@@ -6,28 +6,28 @@ const ServiceAreas = () => {
           مناطق الخدمة
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="bg-gray-50 rounded-xl p-8 text-center border border-gray-200">
+          <div className="border border-gray-100 rounded-lg p-8 text-center">
             <div className="w-16 h-16 mx-auto mb-4 bg-orange-500/10 rounded-full flex items-center justify-center">
               <span className="text-orange-600">📍</span>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              جدة
+            </h3>
+            <p className="text-gray-600">
+              نخدم جميع أحياء جدة، ونوفر حلولًا زجاجية للمشاريع السكنية 
+              والتجارية والتجديدات مع استجابة سريعة وخدمة احترافية.
+            </p>
+          </div>
+          <div className="border border-gray-100 rounded-lg p-8 text-center">
+            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-full flex items-center justify-center">
+              <span className="text-blue-600">📍</span>
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
               مكة المكرمة
             </h3>
             <p className="text-gray-600">
-              نقدم خدماتنا في جميع أحياء مكة المكرمة، بما في ذلك المناطق المركزية 
-              والضواحي، مع استجابة سريعة واحترافية عالية.
-            </p>
-          </div>
-          <div className="bg-gray-50 rounded-xl p-8 text-center border border-gray-200">
-            <div className="w-16 h-16 mx-auto mb-4 bg-blue-500/10 rounded-full flex items-center justify-center">
-              <span className="text-blue-600">📍</span>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              المدينة المنورة
-            </h3>
-            <p className="text-gray-600">
-              نغطي جميع أحياء المدينة المنورة، ونقدم حلولًا زجاجية وألمنيوم 
-              مخصصة لاحتياجات كل عميل.
+              نغطي جميع أحياء مكة المكرمة، ونقدم منتجات وخدمات زجاجية 
+              مخصصة لاحتياجات كل مشروع مع الالتزام بالمعايير المحلية.
             </p>
           </div>
         </div>

@@ -10,52 +10,52 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "مشروع فيلا فاخرة",
+      title: "فيلا سكنية فاخرة",
       category: "زجاج",
       image: "/placeholder.svg", // Would be replaced with actual image
-      alt: "فيلا فاخرة بواجهات زجاج سيكوريت"
+      alt: "فيلا سكنية بواجهات زجاج سيكوريت شفاف"
     },
     {
       id: 2,
       title: "حمام فاخر",
-      category: "شاور",
+      category: "دش",
       image: "/placeholder.svg",
-      alt: "حمام بحاجز زجاج شاور frameless"
+      alt: "حمام بحاجز زجاج frameless وسمك 10مم"
     },
     {
       id: 3,
-      title: "واجهة محل تجاري",
+      title: "واجهة برج تجاري",
       category: "واجهات",
       image: "/placeholder.svg",
-      alt: "واجهة محل تجاري بزجاج عازل حراري"
+      alt: "واجهة برج تجاري بزجاج عازل حراري مزدوج"
     },
     {
       id: 4,
-      title: "باب زجاج أوتوماتيك",
+      title: "باب فندق أوتوماتيك",
       category: "أبواب",
       image: "/placeholder.svg",
-      alt: "باب زجاج أوتوماتيك لمدخل building"
+      alt: "باب فندق زجاج أوتوماتيك مع حساس حركة"
     },
     {
       id: 5,
-      title: "دربزين زجاجي",
-      category: "دربزين",
+      title: "درابزين شرفة",
+      category: "درابزين",
       image: "/placeholder.svg",
-      alt: "دربزين زجاجي مع هندريل ستانلس ستيل"
+      alt: "درابزين زجاجي لشرفة سكنية مع قاعدة ستانلس ستيل"
     },
     {
       id: 6,
-      title: "مراية مدخل فاخرة",
+      title: "مراية مدخل فندقي",
       category: "مرايات",
       image: "/placeholder.svg",
-      alt: "مراية مدخل فاخرة بإضاءة خلفية"
+      alt: "مراية مدخل فندقي بإضاءة خلفية LED"
     },
     {
       id: 7,
-      title: "نوافذ ألمنيوم",
-      category: "ألمنيوم",
+      title: "نوافذ مبنى سكني",
+      category: "نوافذ",
       image: "/placeholder.svg",
-      alt: "نوافذ ألمنيوم عازلة للحرارة والصوت"
+      alt: "نوافذ مبنى سكني بزجاج عازل للصوت والحرارة"
     }
   ];
   
@@ -68,70 +68,78 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 text-center">
-            أعمالنا
+            معرض أعمالنا
           </h2>
           <p className="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
-            معرض لأحدث مشاريعنا في مجال الزجاج والألمنيوم
+            مشاريع زجاجية نفذناها في جدة ومكة المكرمة
           </p>
         </div>
         
         {/* Filters */}
-        <div className="mb-10 flex flex-wrap justify-center gap-4">
+        <div className="mb-10 flex flex-wrap justify-center gap-3">
           <Button 
-            variant={activeFilter === "الكل" ? "default" : "outline"}
+            variant={activeFilter === "الكل" ? "outline" : "ghost"}
             size="sm"
             onClick={() => setActiveFilter("الكل")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
             الكل
           </Button>
           <Button 
-            variant={activeFilter === "زجاج" ? "default" : "outline"}
+            variant={activeFilter === "زجاج" ? "outline" : "ghost"}
             size="sm"
             onClick={() => setActiveFilter("زجاج")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
             زجاج
           </Button>
           <Button 
-            variant={activeFilter === "شاور" ? "default" : "outline"}
+            variant={activeFilter === "دش" ? "outline" : "ghost"}
             size="sm"
-            onClick={() => setActiveFilter("شاور")}
+            onClick={() => setActiveFilter("دش")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
-            شاور
+            دش
           </Button>
           <Button 
-            variant={activeFilter === "واجهات" ? "default" : "outline"}
+            variant={activeFilter === "واجهات" ? "outline" : "ghost"}
             size="sm"
             onClick={() => setActiveFilter("واجهات")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
             واجهات
           </Button>
           <Button 
-            variant={activeFilter === "أبواب" ? "default" : "outline"}
+            variant={activeFilter === "أبواب" ? "outline" : "ghost"}
             size="sm"
             onClick={() => setActiveFilter("أبواب")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
             أبواب
           </Button>
           <Button 
-            variant={activeFilter === "دربزين" ? "default" : "outline"}
+            variant={activeFilter === "درابزين" ? "outline" : "ghost"}
             size="sm"
-            onClick={() => setActiveFilter("دربزين")}
+            onClick={() => setActiveFilter("درابزين")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
-            دربزين
+            درابزين
           </Button>
           <Button 
-            variant={activeFilter === "مرايات" ? "default" : "outline"}
+            variant={activeFilter === "مرايات" ? "outline" : "ghost"}
             size="sm"
             onClick={() => setActiveFilter("مرايات")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
             مرايات
           </Button>
           <Button 
-            variant={activeFilter === "ألمنيوم" ? "default" : "outline"}
+            variant={activeFilter === "نوافذ" ? "outline" : "ghost"}
             size="sm"
-            onClick={() => setActiveFilter("ألمنيوم")}
+            onClick={() => setActiveFilter("نوافذ")}
+            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
           >
-            ألمنيوم
+            نوافذ
           </Button>
         </div>
         
@@ -140,13 +148,13 @@ const Projects = () => {
           {filteredProjects.map(project => (
             <div 
               key={project.id} 
-              className="group cursor-pointer rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-border"
+              className="group cursor-pointer rounded-lg overflow-hidden border border-gray-100 hover:border-gray-200 transition-border"
               onClick={() => setSelectedProject(project)}
             >
               <img
                 src={project.image}
                 alt={project.alt}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="p-4">
                 <h3 className="font-medium text-gray-900">{project.title}</h3>
@@ -157,8 +165,8 @@ const Projects = () => {
         </div>
         
         {/* Load more button - in a real app, this would load more projects */}
-        <div className="mt-10 text-center">
-          <Button variant="outline" size="lg" className="px-8 py-3">
+        <div className="mt-12 text-center">
+          <Button variant="outline" size="lg" className="px-8 py-3 text-gray-600 hover:text-gray-900 border">
             تحميل المزيد
           </Button>
         </div>
@@ -175,7 +183,7 @@ const Projects = () => {
             <img
               src={selectedProject?.image}
               alt={selectedProject?.alt}
-              className="w-full h-96 object-contain rounded-xl"
+              className="w-full h-96 object-contain rounded-lg"
             />
             <p className="text-gray-600">
               وصف تفصيلي للمشروع سيظهر هنا في النسخة النهائية. 
