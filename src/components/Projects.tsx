@@ -1,24 +1,28 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeFilter, setActiveFilter] = useState("الكل");
+  const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Sample project data - in a real app, this would come from a CMS or API
+  // Project data with categories matching the filter list
+  // Note: We're using the existing project data but adjusting categories to match the required filters
+  // For uncategorizable projects, we keep them under "الكل" only
   const projects = [
     {
       id: 1,
       title: "فيلا سكنية فاخرة",
       category: "زجاج",
-      image: "/placeholder.svg", // Would be replaced with actual image
+      image: "/placeholder.svg",
       alt: "فيلا سكنية بواجهات زجاج سيكوريت شفاف"
     },
     {
       id: 2,
       title: "حمام فاخر",
-      category: "دش",
+      category: "شاور",
       image: "/placeholder.svg",
       alt: "حمام بحاجز زجاج frameless وسمك 10مم"
     },
@@ -53,15 +57,61 @@ const Projects = () => {
     {
       id: 7,
       title: "نوافذ مبنى سكني",
-      category: "نوافذ",
+      category: "ألومنيوم",
       image: "/placeholder.svg",
-      alt: "نوافذ مبنى سكني بزجاج عازل للصوت والحرارة"
+      alt: "نوافذ مبنى سكني بزجاج عازل للصوت والحرارة وإطارات ألومنيوم"
+    },
+    {
+      id: 8,
+      title: "محل تجاري زجاجي",
+      category: "زجاج",
+      image: "/placeholder.svg",
+      alt: "محل تجاري بواجهة زجاج سيكوريت واضح"
+    },
+    {
+      id: 9,
+      title: "شرفة زجاجية",
+      category: "شاور",
+      image: "/placeholder.svg",
+      alt: "شرفة زجاجية بإطلالة بانورامية"
     }
   ];
   
+  // Filter projects based on active filter
   const filteredProjects = activeFilter === "الكل" 
     ? projects 
     : projects.filter(p => p.category === activeFilter);
+  
+  // Set current index when opening lightbox
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setSelectedProject(projects[index]);
+  };
+  
+  // Navigate to next project
+  const nextProject = () => {
+    setCurrentIndex((prev) => (prev + 1) % projects.length);
+    setSelectedProject(projects[(currentIndex + 1) % projects.length]);
+  };
+  
+  // Navigate to previous project
+  const prevProject = () => {
+    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+    setSelectedProject(projects[(currentIndex - 1 + projects.length) % projects.length]);
+  };
+  
+  // Handle keydown for lightbox navigation
+  const handleKeyDown = (e) => {
+    if (!selectedProject) return;
+    
+    if (e.key === "Escape") {
+      setSelectedProject(null);
+    } else if (e.key === "ArrowRight") {
+      nextProject();
+    } else if (e.key === "ArrowLeft") {
+      prevProject();
+    }
+  };
   
   return (
     <section className="py-20 bg-white">
@@ -77,91 +127,46 @@ const Projects = () => {
         
         {/* Filters */}
         <div className="mb-10 flex flex-wrap justify-center gap-3">
-          <Button 
-            variant={activeFilter === "الكل" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("الكل")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            الكل
-          </Button>
-          <Button 
-            variant={activeFilter === "زجاج" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("زجاج")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            زجاج
-          </Button>
-          <Button 
-            variant={activeFilter === "دش" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("دش")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            دش
-          </Button>
-          <Button 
-            variant={activeFilter === "واجهات" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("واجهات")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            واجهات
-          </Button>
-          <Button 
-            variant={activeFilter === "أبواب" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("أبواب")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            أبواب
-          </Button>
-          <Button 
-            variant={activeFilter === "درابزين" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("درابزين")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            درابزين
-          </Button>
-          <Button 
-            variant={activeFilter === "مرايات" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("مرايات")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            مرايات
-          </Button>
-          <Button 
-            variant={activeFilter === "نوافذ" ? "outline" : "ghost"}
-            size="sm"
-            onClick={() => setActiveFilter("نوافذ")}
-            className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300"
-          >
-            نوافذ
-          </Button>
+          {[ "الكل", "زجاج", "شاور", "واجهات", "أبواب", "درابزين", "مرايات", "ألومنيوم" ].map((filter) => (
+            <Button 
+              key={filter}
+              variant={activeFilter === filter ? "outline" : "ghost"}
+              size="sm"
+              onClick={() => setActiveFilter(filter)}
+              className="px-4 py-2 text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-all"
+            >
+              {filter}
+            </Button>
+          ))}
         </div>
         
-        {/* Projects Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map(project => (
-            <div 
-              key={project.id} 
-              className="group cursor-pointer rounded-lg overflow-hidden border border-gray-100 hover:border-gray-200 transition-border"
-              onClick={() => setSelectedProject(project)}
-            >
-              <img
-                src={project.image}
-                alt={project.alt}
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="p-4">
-                <h3 className="font-medium text-gray-900">{project.title}</h3>
-                <p className="text-sm text-gray-500 mt-1">{project.category}</p>
+        {/* Projects Grid - Masonry-like layout */}
+        <div className="grid gap-6">
+          {/* Define grid template areas for masonry effect */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {filteredProjects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className="group cursor-pointer rounded-lg overflow-hidden border border-gray-100 hover:border-gray-200 transition-border hover:shadow-lg"
+                onClick={() => openLightbox(index)}
+              >
+                {/* Image container with aspect ratio control */}
+                <div className="relative h-48 w-full overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Subtle overlay on hover */}
+                  <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/5"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-medium text-gray-900">{project.title}</h3>
+                  <p className="text-sm text-gray-500 mt-1">{project.category}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         
         {/* Load more button - in a real app, this would load more projects */}
@@ -172,19 +177,42 @@ const Projects = () => {
         </div>
       </div>
       
-      {/* Lightbox Dialog */}
+      {/* Lightbox */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-4xl mx-auto">
+        <DialogContent className="max-w-4xl mx-auto relative">
+          {/* Close button */}
+          <DialogClose className="absolute top-4 right-4 z-10 p-1 rounded-lg hover:bg-gray-200">
+            <X className="h-5 w-5" />
+          </DialogClose>
+          
+          {/* Navigation arrows */}
+          <button 
+            onClick={prevProject}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white/100 transition-all disabled:opacity-50"
+            aria-label="السابق"
+          >
+            <ArrowLeft className="h-6 w-6 text-gray-900" />
+          </button>
+          <button 
+            onClick={nextProject}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white/100 transition-all disabled:opacity-50"
+            aria="التالي"
+          >
+            <ArrowRight className="h-6 w-6 text-gray-900" />
+          </button>
+          
           <DialogHeader>
             <DialogTitle>{selectedProject?.title}</DialogTitle>
             <DialogDescription>{selectedProject?.category}</DialogDescription>
           </DialogHeader>
           <div className="space-y-6">
-            <img
-              src={selectedProject?.image}
-              alt={selectedProject?.alt}
-              className="w-full h-96 object-contain rounded-lg"
-            />
+            <div className="relative h-96 w-full overflow-hidden rounded-lg">
+              <img
+                src={selectedProject?.image}
+                alt={selectedProject?.alt}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <p className="text-gray-600">
               وصف تفصيلي للمشروع سيظهر هنا في النسخة النهائية. 
               يشمل تفاصيل التنفيذ، المواد المستخدمة، والتحديات التي تم التغلب عليها.
