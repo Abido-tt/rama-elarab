@@ -1,9 +1,6 @@
-import { WhatsApp_LOGO } from "./constants"; // We'll create this constant
+import { WhatsApp_LOGO, WHATSAPP_NUMBER, INSTAGRAM_URL, TIKTOK_URL } from "./constants";
 
 const Contact = () => {
-  // Placeholder for WhatsApp number - will be replaced later
-  const WHATSAPP_NUMBER = "+966XXXXXXXX"; // Placeholder - to be replaced in one place
-  
   return (
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -21,11 +18,11 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="flex items-center bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors"
           >
-            <span className="mr-2">📱</span>
+            <span className="mr-2">{WhatsApp_LOGO}</span>
             تواصل عبر واتساب
           </a>
           <a 
-            href="https://www.instagram.com/rama_alarab_glass" 
+            href={INSTAGRAM_URL} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors"
@@ -34,7 +31,7 @@ const Contact = () => {
             زيارة إنستغرام
           </a>
           <a 
-            href="https://www.tiktok.com/@rama.alarab.glass" 
+            href={TIKTOK_URL} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors"

@@ -1,3 +1,5 @@
+import { INSTAGRAM_URL, TIKTOK_URL } from "./constants";
+
 const SocialMedia = () => {
   return (
     <section className="py-20 bg-gray-50">
@@ -7,7 +9,7 @@ const SocialMedia = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-6">
           <a 
-            href="https://www.instagram.com/rama_alarab_glass" 
+            href={INSTAGRAM_URL} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex flex-col items-center bg-white rounded-xl p-6 shadow hover:shadow-lg transition-shadow w-48"
@@ -19,7 +21,7 @@ const SocialMedia = () => {
             <span className="mt-1 text-sm text-gray-500">@rama_alarab_glass</span>
           </a>
           <a 
-            href="https://www.tiktok.com/@rama.alarab.glass" 
+            href={TIKTOK_URL} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex flex-col items-center bg-white rounded-xl p-6 shadow hover:shadow-lg transition-shadow w-48"

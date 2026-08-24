@@ -1,7 +1,6 @@
+import { WhatsApp_LOGO, WHATSAPP_NUMBER, INSTAGRAM_URL, TIKTOK_URL } from "./constants";
+
 const Footer = () => {
-  // Placeholder for WhatsApp number - will be replaced later
-  const WHATSAPP_NUMBER = "+966XXXXXXXX"; // Placeholder - to be replaced in one place
-  
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -15,7 +14,7 @@ const Footer = () => {
             </div>
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/rama_alarab_glass" 
+                href={INSTAGRAM_URL} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gray-700 transition-colors"
@@ -23,7 +22,7 @@ const Footer = () => {
                 إنستغرام
               </a>
               <a 
-                href="https://www.tiktok.com/@rama.alarab.glass" 
+                href={TIKTOK_URL} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gray-700 transition-colors"
