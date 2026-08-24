@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu } from "@/components/ui/menu";
+import * as MenuPrimitive from "@radix-ui/react-menu";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu as MenuIcon, X as XIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const Menu = MenuPrimitive.Root;
+  const MenuTrigger = MenuPrimitive.Trigger;
+  const MenuContent = MenuPrimitive.Content;
+  const MenuItem = MenuPrimitive.Item;
 
   // Handle scroll event for sticky header
   // Note: In a real app, we would use useEffect, but for simplicity we'll use inline handler
