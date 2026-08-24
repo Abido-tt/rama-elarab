@@ -25,9 +25,9 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center">
             <Button 
-              variant="outline" 
+              variant="default" 
               size="lg" 
-              className="w-full sm:w-auto px-8 py-3 text-white hover:text-white/90 border border-white/50"
+              className="w-full sm:w-auto bg-sky-500 text-white hover:bg-sky-600 px-8 py-3"
               onClick={() => {
                 const element = document.getElementById("projects");
                 if (element) {
@@ -38,7 +38,7 @@ const Hero = () => {
                 }
               }}
             >
-              معرض الأعمال
+              المنتجات
             </Button>
             <Button 
               variant="default" 
