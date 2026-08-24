@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Image } from "next/image";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -144,11 +143,10 @@ const Projects = () => {
               className="group cursor-pointer rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-border"
               onClick={() => setSelectedProject(project)}
             >
-              <Image
+              <img
                 src={project.image}
                 alt={project.alt}
                 className="w-full h-48 object-cover"
-                fill
               />
               <div className="p-4">
                 <h3 className="font-medium text-gray-900">{project.title}</h3>
@@ -174,11 +172,10 @@ const Projects = () => {
             <DialogDescription>{selectedProject?.category}</DialogDescription>
           </DialogHeader>
           <div className="space-y-6">
-            <Image
+            <img
               src={selectedProject?.image}
               alt={selectedProject?.alt}
               className="w-full h-96 object-contain rounded-xl"
-              fill
             />
             <p className="text-gray-600">
               وصف تفصيلي للمشروع سيظهر هنا في النسخة النهائية. 
