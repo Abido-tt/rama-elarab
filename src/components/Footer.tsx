@@ -6,7 +6,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col items-center text-center sm:flex-row sm:justify-between">
           <div className="mb-3 sm:mb-0">
-            <span className="text-gray-900 font-medium">راما العرب للزجاج</span>
+            <a href="/" className="flex items-center">
+              <img 
+                src="dyad-media://media/dreamy-tardigrade-flit/.dyad/media/a4a3cbe2331120c1db390521877b9ee0fe0ec19b23d8f1c11e6630cbf1c75e41.jpeg"
+                alt="شعار راما العرب للزجاج"
+                className="h-8 w-auto"
+              />
+            </a>
           </div>
           <div className="flex flex-col items-center sm:flex-row sm:space-x-4">
             <div className="mb-2 sm:mb-0">
