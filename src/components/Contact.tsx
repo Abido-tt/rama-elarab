@@ -1,6 +1,9 @@
-import { WhatsApp_LOGO, WHATSAPP_NUMBER, INSTAGRAM_URL, TIKTOK_URL } from "./constants";
+import { WhatsApp_LOGO, WHATSAPP_NUMBER, WHATSAPP_MESSAGE, INSTAGRAM_URL, TIKTOK_URL } from "./constants";
 
 const Contact = () => {
+  // Format WhatsApp number: remove spaces and + for URL
+  const formattedWhatsAppNumber = WHATSAPP_NUMBER.replace(/\s/g, '').replace('+', '');
+  
   return (
     <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -13,7 +16,7 @@ const Contact = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
           <a 
-            href={`https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}`} 
+            href={`https://wa.me/${formattedWhatsAppNumber}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center bg-orange-600 text-white px-5 py-3 sm:px-6 sm:py-4 rounded-lg font-medium hover:bg-orange-700 transition-colors w-full sm:w-auto"
