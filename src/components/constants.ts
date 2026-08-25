@@ -5,7 +5,7 @@ export const WHATSAPP_MESSAGE = "السلام عليكم، أريد الاستف
 
 // Social media links
 export const INSTAGRAM_URL = "https://www.instagram.com/rama_alarab_glass";
-export const TIKTOK_URL = "https://www.tiktok.com/@rama.alarab.glass";
+export const TIKTOK_URL = "https://www.tiktok.com/@rama.alarab.glassjeeda";
 
 // WhatsApp logo (emoji)
 export const WhatsApp_LOGO = "📱";
