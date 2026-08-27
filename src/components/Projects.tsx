@@ -123,7 +123,7 @@ const Projects = () => {
       id: 10 + index, // Continue IDs from where original left off
       title: `مشروع ${category} ${countInCategory}`,
       category,
-      image: imageUrl // already includes /images/ prefix
+      image: `/images/${imageUrl}` // Fixed: added /images/ prefix
     };
   });
   
