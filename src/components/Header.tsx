@@ -30,7 +30,7 @@ const Header = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="/images/brand/rama-al-arab-logo.png"
+                src="/images/8a1c705c-2e3d-4637-8285-eaf04cbbb684.jpg"
                 alt="شعار راما العرب للزجاج"
                 className="h-8 w-auto"
               />

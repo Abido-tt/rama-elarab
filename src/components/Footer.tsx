@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="mb-3 sm:mb-0">
             <a href="/" className="flex items-center">
               <img 
-                src="/images/brand/rama-al-arab-logo.png"
+                src="/images/8a1c705c-2e3d-4637-8285-eaf04cbbb684.jpg"
                 alt="شعار راما العرب للزجاج"
                 className="h-8 w-auto"
               />

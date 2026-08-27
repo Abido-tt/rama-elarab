@@ -8,83 +8,106 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("الكل");
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Original 9 projects (keeping their original data)
+  // Local image filenames in order: hero, original projects (9), new images (13)
+  const localFilenames = [
+    "8a1c705c-2e3d-4637-8285-eaf04cbbb684.jpg", // hero (index 0)
+    "1.jpeg", // original project 1
+    "2.jpg", // original project 2
+    "WhatsApp Image 2026-08-22 at 4.52.47 PM.jpeg", // original project 3
+    "WhatsApp Image 2026-08-22 at 4.52.49 PM.jpeg", // original project 4
+    "WhatsApp Image 2026-08-22 at 4.52.50 PM.jpeg", // original project 5
+    "WhatsApp Image 2026-08-22 at 4.52.53 PM.jpeg", // original project 6
+    "WhatsApp Image 2026-08-22 at 4.52.56 PM.jpeg", // original project 7
+    "WhatsApp Image 2026-08-22 at 4.52.56 PM (1).jpeg", // original project 8
+    "WhatsApp Image 2026-08-22 at 4.52.57 PM.jpeg", // original project 9
+    "WhatsApp Image 2026-08-22 at 4.52.57 PM (1).jpeg", // new image 1
+    "WhatsApp Image 2026-08-22 at 4.52.57 PM (2).jpeg", // new image 2
+    "WhatsApp Image 2026-08-22 at 4.53.04 PM.jpeg", // new image 3
+    "WhatsApp Image 2026-08-22 at 4.53.04 PM (1).jpeg", // new image 4
+    "WhatsApp Image 2026-08-22 at 4.53.05 PM.jpeg", // new image 5
+    "WhatsApp Image 2026-08-22 at 4.53.05 PM (1).jpeg", // new image 6
+    "WhatsApp Image 2026-08-22 at 4.53.05 PM (2).jpeg", // new image 7
+    "WhatsApp Image 2026-08-22 at 4.53.06 PM.jpeg", // new image 8
+    "WhatsApp Image 2026-08-22 at 4.53.06 PM (1).jpeg", // new image 9
+    "WhatsApp Image 2026-08-22 at 4.53.06 PM (2).jpeg", // new image 10
+    "WhatsApp Image 2026-08-22 at 4.53.06 PM (3).jpeg", // new image 11
+    "Screenshot 2026-08-23 152521.png", // new image 12
+    "brave_screenshot_web.whatsapp.com.png" // new image 13
+  ];
+  
+  // Original 9 projects (using localFilenames indices 1-9)
   const originalProjects = [
     {
       id: 1,
       title: "فيلا سكنية فاخرة",
       category: "زجاج",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/0da7a60d66a7dbc86cc3524b63bed335ce2452181a3422cdef85e6419064f4bf.jpg",
+      image: `/images/${localFilenames[1]}`,
     },
     {
       id: 2,
       title: "حمام فاخر",
       category: "شاور",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/de03fed34d2bda4ef186fffa0d88852576cb67e89b253756b179415f2c349f05.jpeg",
+      image: `/images/${localFilenames[2]}`,
     },
     {
       id: 3,
       title: "واجهة برج تجاري",
       category: "واجهات",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ba2a40a450a3b694de79a4da95a88249e124063d3052392569320eff6c17fffd.jpeg",
+      image: `/images/${localFilenames[3]}`,
     },
     {
       id: 4,
       title: "باب فندق أوتوماتيك",
       category: "أبواب",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/fbdf7a96d335b2b23501d5a437dde6ba229a5d1cfbc3db33a0f1ba8730766718.jpeg",
+      image: `/images/${localFilenames[4]}`,
     },
     {
       id: 5,
       title: "درابزين شرفة",
       category: "درابزين",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/c3ce1771665a6721e10132acc060b17f645a2a49234da7b874cb2c1425c2e822.jpeg",
+      image: `/images/${localFilenames[5]}`,
     },
     {
       id: 6,
       title: "مراية مدخل فندقي",
       category: "مرايات",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/87faf49ca38272bfee567c6537ae486e8c1e94067e2be2006598e5c385f4f043.jpeg",
+      image: `/images/${localFilenames[6]}`,
     },
     {
       id: 7,
       title: "نوافذ مبنى سكني",
       category: "ألومنيوم",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ea9dd3abb67db95386cdeff4c68241ea9563d827529374d110db99d36603b380.jpeg",
+      image: `/images/${localFilenames[7]}`,
     },
     {
       id: 8,
       title: "محل تجاري زجاجي",
       category: "زجاج",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/6c436ab2f8b0991733a7b023f23dadb159230cfa1af20ca5a79db07088e493ef.png",
+      image: `/images/${localFilenames[8]}`,
     },
     {
       id: 9,
       title: "شرفة زجاجية",
       category: "شاور",
-      image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ebb9b62aa5ccf5755b49bced0bd40825d04a479c95b6060954409fd5c2bf513b.png",
+      image: `/images/${localFilenames[9]}`,
     }
-  ].map(project => ({
-    ...project,
-    image: `/images/${project.image.split('/').pop()}`
-  }));
+  ];
   
-  // New 13 image URLs (10 previous + 3 new)
+  // New 13 images (using localFilenames indices 10-22)
   const newImageUrls = [
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/b19b737144fc1d0f4eef6cc76b1abdbe55abb437889c1a57e97af4b0cf038cf0.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/550c79cd9fae3eba1d30fc87b5774187d3fb34f39b87435fd42726d3405638fb.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/f468a18660f1f358a22a093c575efa927545f5bc0fd64efef21d3c02adb167c7.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/373f88508090c2b7e7e6e5d04b27e32ae8c078f4d4c5351c2d5aa2800be31dc5.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/10da9d9e023c972852fef67f62d22cc4ea3e4b781cfd5fe4c1278daf57a28518.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/c314ef5353cd31a5ba72c2218672a721b8d11421477a4f6a4114c0c17ef88328.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/0cbc776c235bb9495a5e1b53c7c99b1e2b1f23e8efc6cfbf7e2350b063d16b6e.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/113b6ceb276f5980467392645fe50bf103a4f3c6c70e12edc83bfb582ebfda12.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/abe8b1b1008792385739825510fde7737cfce899c06654497bde2f38848c5535.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/8347414b0da098534d21957da6a4d995b552043bd1c588f6f781a874d73a07f8.jpeg",
-    // The 3 new images
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/552654373cecb8a65b5e9a712eaa601a9741669809ac080c18fdd3e55066051f.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ea2501312eb5a9fcc7ad11c497293f5e67698655588feca5a8296d3ed8e07b8d.jpeg",
-    "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/5b344f10c03b810c453c88264a76a02ccf0311de3c99c2a84ee3342c9031b67f.jpeg"
+    localFilenames[10],
+    localFilenames[11],
+    localFilenames[12],
+    localFilenames[13],
+    localFilenames[14],
+    localFilenames[15],
+    localFilenames[16],
+    localFilenames[17],
+    localFilenames[18],
+    localFilenames[19],
+    localFilenames[20],
+    localFilenames[21],
+    localFilenames[22]
   ];
   
   // Categories for new projects (round-robin assignment)
@@ -92,7 +115,6 @@ const Projects = () => {
   
   // Generate 13 new projects with placeholder titles
   const newProjects = newImageUrls.map((imageUrl, index) => {
-    const localImageUrl = `/images/${imageUrl.split('/').pop()}`;
     const categoryIndex = index % categories.length;
     const category = categories[categoryIndex];
     // Calculate how many times this category has appeared so far in new projects
@@ -101,7 +123,7 @@ const Projects = () => {
       id: 10 + index, // Continue IDs from where original left off
       title: `مشروع ${category} ${countInCategory}`,
       category,
-      image: localImageUrl
+      image: imageUrl // already includes /images/ prefix
     };
   });
   
