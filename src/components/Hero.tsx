@@ -5,11 +5,15 @@ const Hero = () => {
   // Format WhatsApp number: remove spaces and + for URL
   const formattedWhatsAppNumber = WHATSAPP_NUMBER.replace(/\s/g, '').replace('+', '');
   
+  // Extract filename from the dyad-media URL for the background image
+  const heroImageUrl = "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/404429d363ba97e45f420cebe6e244a0574360ea14f10f2d4220647fc9315226.jpeg";
+  const heroFilename = heroImageUrl.split('/').pop();
+  
   return (
     <section className="relative" id="hero">
       <div className="absolute inset-0">
         <img 
-          src="dyad-media://media/dreamy-tardigrade-flit/.dyad/media/404429d363ba97e45f420cebe6e244a0574360ea14f10f2d4220647fc9315226.jpeg"
+          src={`/images/${heroFilename}`}
           alt="زجاج معماري"
           className="w-full h-full object-cover"
         />

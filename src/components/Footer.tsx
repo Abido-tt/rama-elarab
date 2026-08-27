@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="mb-3 sm:mb-0">
             <a href="/" className="flex items-center">
               <img 
-                src="dyad-media://media/dreamy-tardigrade-flit/.dyad/media/a4a3cbe2331120c1db390521877b9ee0fe0ec19b23d8f1c11e6630cbf1c75e41.jpeg"
+                src="/images/brand/rama-al-arab-logo.png"
                 alt="شعار راما العرب للزجاج"
                 className="h-8 w-auto"
               />
@@ -37,9 +37,9 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="mt-4 pt-3 border-t border-gray-100 text-xs text-gray-500">
-          © 2024-2026 راما العرب للزجاج. جميع الحقوق محفوظة.
+          <div className="mt-4 pt-3 border-t border-gray-100 text-xs text-gray-500">
+            © 2024-2026 راما العرب للزجاج. جميع الحقوق محفوظة.
+          </div>
         </div>
       </div>
     </footer>

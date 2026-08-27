@@ -64,7 +64,10 @@ const Projects = () => {
       category: "شاور",
       image: "dyad-media://media/dreamy-tardigrade-flit/.dyad/media/ebb9b62aa5ccf5755b49bced0bd40825d04a479c95b6060954409fd5c2bf513b.png",
     }
-  ];
+  ].map(project => ({
+    ...project,
+    image: `/images/${project.image.split('/').pop()}`
+  }));
   
   // New 13 image URLs (10 previous + 3 new)
   const newImageUrls = [
@@ -89,6 +92,7 @@ const Projects = () => {
   
   // Generate 13 new projects with placeholder titles
   const newProjects = newImageUrls.map((imageUrl, index) => {
+    const localImageUrl = `/images/${imageUrl.split('/').pop()}`;
     const categoryIndex = index % categories.length;
     const category = categories[categoryIndex];
     // Calculate how many times this category has appeared so far in new projects
@@ -97,7 +101,7 @@ const Projects = () => {
       id: 10 + index, // Continue IDs from where original left off
       title: `مشروع ${category} ${countInCategory}`,
       category,
-      image: imageUrl
+      image: localImageUrl
     };
   });
   

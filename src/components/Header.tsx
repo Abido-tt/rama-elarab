@@ -30,7 +30,7 @@ const Header = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="dyad-media://media/dreamy-tardigrade-flit/.dyad/media/a4a3cbe2331120c1db390521877b9ee0fe0ec19b23d8f1c11e6630cbf1c75e41.jpeg"
+                src="/images/brand/rama-al-arab-logo.png"
                 alt="شعار راما العرب للزجاج"
                 className="h-8 w-auto"
               />
